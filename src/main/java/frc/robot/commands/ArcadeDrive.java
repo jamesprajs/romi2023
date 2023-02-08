@@ -25,6 +25,7 @@ public class ArcadeDrive extends CommandBase {
       Drivetrain drivetrain,
       Supplier<Double> xaxisSpeedSupplier,
       Supplier<Double> zaxisRotateSupplier) {
+    System.out.println("cmdArcadeDrive");
     m_drivetrain = drivetrain;
     m_xaxisSpeedSupplier = xaxisSpeedSupplier;
     m_zaxisRotateSupplier = zaxisRotateSupplier;

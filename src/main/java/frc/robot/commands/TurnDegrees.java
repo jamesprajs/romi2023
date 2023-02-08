@@ -21,6 +21,7 @@ public class TurnDegrees extends CommandBase {
    * @param drive The drive subsystem on which this command will run
    */
   public TurnDegrees(double speed, double degrees, Drivetrain drive) {
+    System.out.println("cmdTurnDegrees");
     m_degrees = degrees;
     m_speed = speed;
     m_drive = drive;

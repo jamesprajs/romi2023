@@ -21,6 +21,7 @@ public class DriveTime extends CommandBase {
    * @param drive The drivetrain subsystem on which this command will run
    */
   public DriveTime(double speed, double time, Drivetrain drive) {
+    System.out.println("cmdDriveTime");
     m_speed = speed;
     m_duration = time * 1000;
     m_drive = drive;

@@ -25,6 +25,7 @@ public class TurnTime extends CommandBase {
    * @param drive The drive subsystem on which this command will run
    */
   public TurnTime(double speed, double time, Drivetrain drive) {
+    System.out.println("cmdTurnTime");
     m_rotationalSpeed = speed;
     m_duration = time * 1000;
     m_drive = drive;

@@ -16,6 +16,7 @@ public class AutonomousTime extends SequentialCommandGroup {
    * @param drivetrain The drive subsystem on which this command will run
    */
   public AutonomousTime(Drivetrain drivetrain) {
+    System.out.println("cmdAutonomousTime");
     addCommands(
         new DriveTime(-0.6, 2.0, drivetrain),
         new TurnTime(-0.5, 1.3, drivetrain),

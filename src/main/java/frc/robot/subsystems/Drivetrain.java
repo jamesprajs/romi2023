@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
+  private int i = 1;
   private static final double kCountsPerRevolution = 1440.0;
   private static final double kWheelDiameterInch = 2.75591; // 70 mm
 
@@ -44,7 +45,7 @@ public class Drivetrain extends SubsystemBase {
 
     m_fieldSim = new Field2d();
     SmartDashboard.putData("Field", m_fieldSim);
-    
+
     // We need to invert one side of the drivetrain so that positive voltages
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
@@ -57,6 +58,10 @@ public class Drivetrain extends SubsystemBase {
   }
 
   public void arcadeDrive(double xaxisSpeed, double zaxisRotate) {
+    if (i < 4) {
+      System.out.println("arcadeDrive");
+      i = i + 1;
+    }
     m_diffDrive.arcadeDrive(xaxisSpeed, zaxisRotate);
   }
 
@@ -83,7 +88,6 @@ public class Drivetrain extends SubsystemBase {
   }
 
   public double getAverageDistanceInch() {
-    System.out.println("getAverageDistanceInch");
     return (getLeftDistanceInch() + getRightDistanceInch()) / 2.0;
   }
 
