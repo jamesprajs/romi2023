@@ -36,6 +36,7 @@ public class Drivetrain extends SubsystemBase {
 
   /** Creates a new Drivetrain. */
   public Drivetrain() {
+    System.out.println("Drivetrain()");"
     // We need to invert one side of the drivetrain so that positive voltages
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
@@ -52,6 +53,7 @@ public class Drivetrain extends SubsystemBase {
   }
 
   public void resetEncoders() {
+    System.out.println("resetEncoders");
     m_leftEncoder.reset();
     m_rightEncoder.reset();
   }
@@ -73,6 +75,7 @@ public class Drivetrain extends SubsystemBase {
   }
 
   public double getAverageDistanceInch() {
+    System.out.println("getAverageDistanceInch");
     return (getLeftDistanceInch() + getRightDistanceInch()) / 2.0;
   }
 

@@ -49,6 +49,7 @@ public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
+    System.out.println("RobotContainer");
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -60,6 +61,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    System.out.println("configureButtonBindings");
     // Default command is arcade drive. This will run unless another command
     // is scheduled over it.
     m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
@@ -82,6 +84,7 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
+    System.out.println("getAutonomousCommand()");"
     return m_chooser.getSelected();
   }
 
@@ -91,6 +94,7 @@ public class RobotContainer {
    * @return the command to run in teleop
    */
   public Command getArcadeDriveCommand() {
+    System.out.println("getArcadeDriveCommand");
     return new ArcadeDrive(
         m_drivetrain, () -> -m_controller.getRawAxis(1), () -> -m_controller.getRawAxis(2));
   }

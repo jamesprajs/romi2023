@@ -24,6 +24,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    System.out.println("robotInit");
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
@@ -47,7 +48,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called once each time the robot enters Disabled mode. */
   @Override
-  public void disabledInit() {}
+  public void disabledInit() {
+    System.out.println("disabledInit");
+  }
 
   @Override
   public void disabledPeriodic() {}
@@ -55,6 +58,7 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
+    System.out.println("autonomousInit");
     // Get selected routine from the SmartDashboard
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
@@ -70,6 +74,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    System.out.println("teleopInit");
     // This makes sure that the autonomous stops running which will
     // use the default command which is ArcadeDrive. If you want the autonomous
     // to continue until interrupted by another command, remove
@@ -85,6 +90,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void testInit() {
+    System.out.println("testInit");
     // Cancels all running commands at the start of test mode.
     CommandScheduler.getInstance().cancelAll();
   }
